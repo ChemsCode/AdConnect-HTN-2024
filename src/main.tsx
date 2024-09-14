@@ -10,6 +10,7 @@ import HomeView from "./pages/HomeView";
 import LandingView from "./pages/LandingView";
 import ChatView from "./pages/ChatView";
 import ProfileView from "./pages/ProfileView";
+import Navbar from "./components/Navbar";
 
 
 
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ConvexProvider client={convex}>
+      <Navbar />
     <RouterProvider router={router} />
     </ConvexProvider>
   </React.StrictMode>,

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -18,6 +17,12 @@ import {
 
 export default function LandingView() {
   return (
+    <div className="flex justify-center items-center h-[calc(100vh-200px)]">
+        <div className="w-1/2">
+            <h1 className="text-4xl font-bold">Promote your product throught the right channels</h1>
+            <p className="mt-4">We connect you with creators who have the same audiences you want.</p>
+
+        </div>
     <Tabs defaultValue="login" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="login">Login</TabsTrigger>
@@ -27,18 +32,15 @@ export default function LandingView() {
         <Card>
           <CardHeader>
             <CardTitle>Login</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when you're done.
-            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" defaultValue="Pedro Duarte" />
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" placeholder="john@example.com" />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
+              <Label htmlFor="password">Password</Label>
+              <Input id="password" type="password" />
             </div>
           </CardContent>
           <CardFooter>
@@ -50,18 +52,19 @@ export default function LandingView() {
         <Card>
           <CardHeader>
             <CardTitle>Signup</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" placeholder="jane@example.com"/>
             </div>
             <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
+              <Label htmlFor="new">Password</Label>
               <Input id="new" type="password" />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="confirm">Confirm Password</Label>
+              <Input id="confirm" type="password" />
             </div>
           </CardContent>
           <CardFooter>
@@ -70,5 +73,6 @@ export default function LandingView() {
         </Card>
       </TabsContent>
     </Tabs>
+    </div>
   )
 }
