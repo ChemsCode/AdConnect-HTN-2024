@@ -1,8 +1,11 @@
+import Navbar from "@/components/Navbar";
+
 export default function ProfileView() {
-    return (
-        <div>
-            <h1>Profile</h1>
-            <div>Welcome to the profile page</div>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar />
+      <h1>Profile</h1>
+      <div>Welcome to the profile page</div>
+    </div>
+  );
 }
