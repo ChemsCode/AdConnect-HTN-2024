@@ -14,65 +14,71 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import LoginButton from "../components/Login"
+// import LogoutButton from "../components/logout"
 
 export default function LandingView() {
   return (
     <div className="flex justify-center items-center h-[calc(100vh-200px)]">
         <div className="w-1/2">
-            <h1 className="text-4xl font-bold">Promote your product throught the right channels</h1>
+            <h1 className="text-4xl font-bold">Promote your product through the right channels</h1>
             <p className="mt-4">We connect you with creators who have the same audiences you want.</p>
-
         </div>
-    <Tabs defaultValue="login" className="w-[400px]">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="login">Login</TabsTrigger>
-        <TabsTrigger value="Signup">Signup</TabsTrigger>
-      </TabsList>
-      <TabsContent value="login">
-        <Card>
-          <CardHeader>
-            <CardTitle>Login</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="john@example.com" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="Signup">
-        <Card>
-          <CardHeader>
-            <CardTitle>Signup</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="jane@example.com"/>
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">Password</Label>
-              <Input id="new" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="confirm">Confirm Password</Label>
-              <Input id="confirm" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
+        
+        <Tabs defaultValue="login" className="w-[400px]">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="login">Login</TabsTrigger>
+            <TabsTrigger value="Signup">Signup</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="login">
+            <Card>
+              <CardHeader>
+                <CardTitle>Login</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="space-y-1">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="john@example.com" />
+                </div>
+                <div className="space-y-1">
+                  <Label htmlFor="password">Password</Label>
+                  <Input id="password" type="password" />
+                </div>
+              </CardContent>
+              <CardFooter>
+                {/* Replace the 'Save changes' button with the Auth0 login button */}
+                <Button><LoginButton /></Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+          
+          <TabsContent value="Signup">
+            <Card>
+              <CardHeader>
+                <CardTitle>Signup</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="space-y-1">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="jane@example.com"/>
+                </div>
+                <div className="space-y-1">
+                  <Label htmlFor="new">Password</Label>
+                  <Input id="new" type="password" />
+                </div>
+                <div className="space-y-1">
+                  <Label htmlFor="confirm">Confirm Password</Label>
+                  <Input id="confirm" type="password" />
+                </div>
+              </CardContent>
+              <CardFooter>
+                {/* Save password or alternatively you can add logout here */}
+                <Button>Save password</Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+        </Tabs>
     </div>
   )
 }
